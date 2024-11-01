@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\Projetos\\Gifflix\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Gifflix.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Gifflix.bundle.scp.css"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\Gifflix.png",
+      "PackagePath": "staticwebassets\\images\\Gifflix.png"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\Ore.gif",
+      "PackagePath": "staticwebassets\\images\\Ore.gif"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\fubuki.png",
+      "PackagePath": "staticwebassets\\images\\fubuki.png"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\mona.jpg",
+      "PackagePath": "staticwebassets\\images\\mona.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Gifflix.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Gifflix.props",
+      "PackagePath": "build\\Gifflix.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Gifflix.props",
+      "PackagePath": "buildMultiTargeting\\Gifflix.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Gifflix.props",
+      "PackagePath": "buildTransitive\\Gifflix.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

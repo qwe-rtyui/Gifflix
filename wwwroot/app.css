@@ -1,6 +1,14 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*font-family: 'Neue Plak', Helvetica, sans-serif;*/
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #141414;
+    overflow-y: auto;
 }
+    html::-webkit-scrollbar {
+        width: 0; /* Oculta a barra de rolagem */
+        background: transparent; /* Fundo transparente */
+    }
 
 a, .btn-link {
     color: #006bb7;

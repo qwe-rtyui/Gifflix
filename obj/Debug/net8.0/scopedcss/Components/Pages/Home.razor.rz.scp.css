@@ -1,0 +1,263 @@
+/* Estilos gerais da página */
+.home-page[b-v396g7pthq] {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+}
+
+/* Banner principal */
+.banner[b-v396g7pthq] {
+    background-image: url('/images/Ore.gif');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+    /*padding: 20px;*/
+    margin-bottom: 20px;
+}
+
+.banner-content[b-v396g7pthq] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.badge[b-v396g7pthq] {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title[b-v396g7pthq] {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description[b-v396g7pthq] {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.buttons[b-v396g7pthq] {
+    display: flex;
+    gap: 10px;
+}
+
+.play-button[b-v396g7pthq], .my-list-button[b-v396g7pthq] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-button[b-v396g7pthq] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.my-list-button[b-v396g7pthq] {
+    background-color: #333;
+    color: white;
+}
+
+
+/* Seção Popular */
+.popular-section[b-v396g7pthq] {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+}
+
+    .popular-section h2[b-v396g7pthq] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+.popular-items[b-v396g7pthq] {
+    display: flex; /* Exibe os itens em linha */
+    gap: 15px; /* Espaço entre os itens */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-y: hidden; /* Impede rolagem vertical */
+    white-space: nowrap; /* Impede quebra de linha */
+    max-width: 100%; /* Limita a largura ao contêiner pai */
+    padding-bottom: 10px; /* Espaço para a barra de rolagem */
+}
+
+.popular-item[b-v396g7pthq] {
+    min-width: 150px; /* Largura mínima dos itens */
+    max-width: 200px; /* Largura máxima dos itens */
+    text-align: center;
+    scroll-snap-align: start; /* Para alinhar itens ao parar a rolagem */
+}
+
+    .popular-item img[b-v396g7pthq] {
+        width: 100%; /* Ajusta a imagem à largura do item */
+        border-radius: 5px;
+    }
+
+    .popular-item p[b-v396g7pthq] {
+        margin-top: 5px; /* Espaço acima do texto */
+        font-size: 0.9em;
+    }
+
+/* Estilizando a barra de rolagem (opcional) */
+.popular-items[b-v396g7pthq]::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.popular-items[b-v396g7pthq]::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+    .popular-items[b-v396g7pthq]::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do "thumb" ao passar o mouse */
+    }
+
+/* Seção item */
+.item-section[b-v396g7pthq] {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+
+    position: static;
+    z-index: 10;
+}
+
+    .item-section h2[b-v396g7pthq] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+.items[b-v396g7pthq] {
+    display: flex; /* Exibe os itens em linha */
+    gap: 15px; /* Espaço entre os itens */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-y: hidden; /* Impede rolagem vertical */
+    white-space: nowrap; /* Impede quebra de linha */
+    max-width: 100%; /* Limita a largura ao contêiner pai */
+    padding-bottom: 10px; /* Espaço para a barra de rolagem */
+}
+
+.item[b-v396g7pthq] {
+    min-width: 299px;
+    max-width: 200px;
+    scroll-snap-align: start;
+    transition: transform 0.5s ease;
+}
+
+    .item img[b-v396g7pthq] {
+        width: 100%;
+        border-radius: 5px;
+        transition: transform 0.5s ease; /* Adicione a transição à imagem */
+    }
+
+    .item:hover img[b-v396g7pthq] {
+        min-width: 310px;
+        max-width: 200px;
+        transform: scale(1.3);
+        transition: transform 0.5s ease;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .item:hover img[b-v396g7pthq] {
+        opacity: 1; /* Torna o overlay visível ao passar o mouse */
+    }
+
+    .item:hover:first-child img[b-v396g7pthq] {
+        margin-left: 40px;
+    }
+
+    .item:hover:last-child img[b-v396g7pthq] {
+        background-color: lightgreen; /* Estilo para o último item */
+    }
+
+.menu[b-v396g7pthq] {
+    position: absolute;
+    transform: translate(-30%, 0%); /* Ajusta para o centro */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease; /* Transição suave para o menu */
+    z-index: 2; /* Garante que o menu fique acima do overlay */
+}
+
+.item:hover .menu[b-v396g7pthq] {
+    opacity: 1; /* Torna o menu visível ao passar o mouse */
+    height: 175px;
+    background-color: #00000091;
+    min-width: 310px;
+    max-width: 200px;
+    transform: scale(1.3);
+}
+
+.item:hover:first-child .menu[b-v396g7pthq] {
+    margin-left: 40px;
+}
+
+.item p[b-v396g7pthq] {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.items-menu[b-v396g7pthq] {
+    display: none;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.item:hover .items-menu[b-v396g7pthq] {
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.ico[b-v396g7pthq] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+    .ico:hover[b-v396g7pthq] {
+        transform: scale(2);
+        transition: 0.5s ease;
+    }
+
+.play:hover[b-v396g7pthq] {
+    color: darkred;
+}
+
+.star:hover[b-v396g7pthq] {
+    color: yellow;
+}
+
+.thumbs-up:hover[b-v396g7pthq] {
+    color: dodgerblue;
+}
+
+.thumbs-down:hover[b-v396g7pthq] {
+    color: red;
+}
+
+
+
+/* Estilizando a barra de rolagem (opcional) */
+.items[b-v396g7pthq]::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.items[b-v396g7pthq]::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+    .items[b-v396g7pthq]::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do "thumb" ao passar o mouse */
+    }

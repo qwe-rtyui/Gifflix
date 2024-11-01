@@ -16,8 +16,9 @@
 }
 
 .top-row {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    place-items: center;
+    display:flex !important;
+    background-color: transparent;
 }
 
 .navbar-brand {
@@ -47,18 +48,8 @@
 }
 
 .nav-item {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
-
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
-
     .nav-item ::deep .nav-link {
         color: #d7d7d7;
         background: none;
