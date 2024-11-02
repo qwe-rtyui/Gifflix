@@ -1,0 +1,135 @@
+﻿.items {
+    margin-top: 25px;
+    display: flex; /* Exibe os itens em linha */
+    gap: 15px; /* Espaço entre os itens */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-y: hidden; /* Impede rolagem vertical */
+    white-space: nowrap; /* Impede quebra de linha */
+    max-width: 100%; /* Limita a largura ao contêiner pai */
+    padding-bottom: 10px; /* Espaço para a barra de rolagem */
+}
+
+.item {
+    min-width: 299px;
+    max-width: 200px;
+    scroll-snap-align: start;
+    transition: transform 0.5s ease;
+}
+
+    .item img {
+        width: 100%;
+        border-radius: 5px;
+        transition: transform 0.5s ease; /* Adicione a transição à imagem */
+        max-height: 168px;
+    }
+
+    .item:hover img {
+        min-width: 310px;
+        max-width: 200px;
+        transform: scale(1.3);
+        transition: transform 0.5s ease;
+        position: absolute;
+        z-index: 1;
+        max-height: 175px;
+    }
+
+    .item:hover img {
+        opacity: 1; /* Torna o overlay visível ao passar o mouse */
+    }
+
+    .item:hover:first-child img {
+        margin-left: 40px;
+    }
+
+    .item:hover:last-child img {
+        background-color: lightgreen; /* Estilo para o último item */
+    }
+
+.menu {
+    position: absolute;
+    transform: translate(-30%, 0%); /* Ajusta para o centro */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease; /* Transição suave para o menu */
+    z-index: 2; /* Garante que o menu fique acima do overlay */
+}
+
+.item:hover .menu {
+    opacity: 1; /* Torna o menu visível ao passar o mouse */
+    height: 175px;
+    background-color: #00000091;
+    min-width: 310px;
+    max-width: 200px;
+    transform: scale(1.3);
+}
+
+.item:hover:first-child .menu {
+    margin-left: 40px;
+}
+
+.item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.items-menu {
+    display: none;
+    padding: 10px;
+    font-size: 25px;    
+}
+
+.item:hover .items-menu {
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+
+    display: flex;
+    align-items: flex-end;
+    height: -webkit-fill-available;
+}
+
+.ico {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+    .ico:hover {
+        transform: scale(1.3);
+        transition: 0.5s ease;
+    }
+
+.play:hover {
+    color: darkred;
+}
+
+.star:hover {
+    color: yellow;
+}
+
+.thumbs-up:hover {
+    color: dodgerblue;
+}
+
+.thumbs-down:hover {
+    color: red;
+}
+
+
+
+.item:hover .item-hover {
+    height: 100px;
+    width: 100px;
+    background-color: darkred;
+}
+/* Estilizando a barra de rolagem (opcional) */
+.items::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.items::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+    .items::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do "thumb" ao passar o mouse */
+    }

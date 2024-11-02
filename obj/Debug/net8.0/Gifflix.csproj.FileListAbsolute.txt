@@ -31,3 +31,5 @@ G:\Projetos\Gifflix\obj\Debug\net8.0\ref\Gifflix.dll
 G:\Projetos\Gifflix\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 G:\Projetos\Gifflix\obj\Debug\net8.0\scopedcss\Components\Component\Banner.razor.rz.scp.css
 G:\Projetos\Gifflix\obj\Debug\net8.0\scopedcss\Components\Component\Popular.razor.rz.scp.css
+G:\Projetos\Gifflix\obj\Debug\net8.0\scopedcss\Components\Component\Item.razor.rz.scp.css
+G:\Projetos\Gifflix\obj\Debug\net8.0\scopedcss\Components\Pages\Datail.razor.rz.scp.css
