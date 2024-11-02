@@ -1,3 +1,119 @@
+/* _content/Gifflix/Components/Component/Banner.razor.rz.scp.css */
+/* Banner principal */
+.banner-content[b-3558fstnit] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.badge[b-3558fstnit] {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title[b-3558fstnit] {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description[b-3558fstnit] {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.buttons[b-3558fstnit] {
+    display: flex;
+    gap: 10px;
+}
+
+.play-button[b-3558fstnit], .my-list-button[b-3558fstnit] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-button[b-3558fstnit] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.my-list-button[b-3558fstnit] {
+    background-color: #333;
+    color: white;
+}
+/* _content/Gifflix/Components/Component/Popular.razor.rz.scp.css */
+/* Seção Popular */
+.popular-items[b-lplqvy3csw] {
+    display: flex;  
+    gap: 15px; 
+    overflow-x: auto; 
+    overflow-y: hidden;  
+    white-space: nowrap;  
+    max-width: 100%; 
+    padding-bottom: 10px;  
+}
+
+.popular-item[b-lplqvy3csw] {
+    min-width: 250px;
+    max-width: 300px;
+    max-height: 386px;
+    text-align: center;
+    scroll-snap-align: start;
+    
+}
+
+    .popular-item img[b-lplqvy3csw] {
+        width: 100%;  
+        border-radius: 5px;
+  
+    }
+
+    .popular-item:hover img[b-lplqvy3csw] {
+        display:none;
+        
+    }
+    .popular-item:hover[b-lplqvy3csw] {
+        /*background-image: url('/images/Ore.gif' )*/;
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        animation: increaseleft-b-lplqvy3csw 0.5s forwards;
+    }
+
+@keyframes increaseleft-b-lplqvy3csw {
+    from {
+        left: 0; /* Começa no lado esquerdo */
+        width: 0; /* Começa com largura 0 */
+    }
+
+    to {
+        left: 0; /* Permanece no lado esquerdo */
+        min-width: 750px; /* Aumenta para a largura total do contêiner */
+    }
+}
+
+/*/* Estilizando a barra de rolagem (opcional) */
+.popular-items[b-lplqvy3csw]::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.popular-items[b-lplqvy3csw]::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+    .popular-items[b-lplqvy3csw]::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do "thumb" ao passar o mouse */
+    }
 /* _content/Gifflix/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-gi4iy8j4vi] {
     position: relative;
@@ -214,58 +330,6 @@ main[b-gi4iy8j4vi] {
     margin-bottom: 20px;
 }
 
-.banner-content[b-v396g7pthq] {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
-    height: -webkit-fill-available;
-    padding: 30px;
-    max-width: 600px;
-}
-
-.badge[b-v396g7pthq] {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.title[b-v396g7pthq] {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-.description[b-v396g7pthq] {
-    font-size: 1.1em;
-    margin: 15px 0;
-}
-
-.buttons[b-v396g7pthq] {
-    display: flex;
-    gap: 10px;
-}
-
-.play-button[b-v396g7pthq], .my-list-button[b-v396g7pthq] {
-    padding: 10px 20px;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.play-button[b-v396g7pthq] {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-}
-
-.my-list-button[b-v396g7pthq] {
-    background-color: #333;
-    color: white;
-}
-
-
 /* Seção Popular */
 .popular-section[b-v396g7pthq] {
     margin-top: 20px;
@@ -277,46 +341,7 @@ main[b-gi4iy8j4vi] {
         margin-bottom: 10px;
     }
 
-.popular-items[b-v396g7pthq] {
-    display: flex; /* Exibe os itens em linha */
-    gap: 15px; /* Espaço entre os itens */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    overflow-y: hidden; /* Impede rolagem vertical */
-    white-space: nowrap; /* Impede quebra de linha */
-    max-width: 100%; /* Limita a largura ao contêiner pai */
-    padding-bottom: 10px; /* Espaço para a barra de rolagem */
-}
 
-.popular-item[b-v396g7pthq] {
-    min-width: 150px; /* Largura mínima dos itens */
-    max-width: 200px; /* Largura máxima dos itens */
-    text-align: center;
-    scroll-snap-align: start; /* Para alinhar itens ao parar a rolagem */
-}
-
-    .popular-item img[b-v396g7pthq] {
-        width: 100%; /* Ajusta a imagem à largura do item */
-        border-radius: 5px;
-    }
-
-    .popular-item p[b-v396g7pthq] {
-        margin-top: 5px; /* Espaço acima do texto */
-        font-size: 0.9em;
-    }
-
-/* Estilizando a barra de rolagem (opcional) */
-.popular-items[b-v396g7pthq]::-webkit-scrollbar {
-    height: 8px; /* Altura da barra de rolagem */
-}
-
-.popular-items[b-v396g7pthq]::-webkit-scrollbar-thumb {
-    background: #888; /* Cor do "thumb" da barra de rolagem */
-    border-radius: 10px; /* Bordas arredondadas */
-}
-
-    .popular-items[b-v396g7pthq]::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Cor do "thumb" ao passar o mouse */
-    }
 
 /* Seção item */
 .item-section[b-v396g7pthq] {
@@ -333,6 +358,7 @@ main[b-gi4iy8j4vi] {
     }
 
 .items[b-v396g7pthq] {
+    margin-top: 25px;
     display: flex; /* Exibe os itens em linha */
     gap: 15px; /* Espaço entre os itens */
     overflow-x: auto; /* Permite rolagem horizontal */
@@ -353,6 +379,7 @@ main[b-gi4iy8j4vi] {
         width: 100%;
         border-radius: 5px;
         transition: transform 0.5s ease; /* Adicione a transição à imagem */
+        max-height: 168px;
     }
 
     .item:hover img[b-v396g7pthq] {
@@ -362,6 +389,7 @@ main[b-gi4iy8j4vi] {
         transition: transform 0.5s ease;
         position: absolute;
         z-index: 1;
+        max-height: 175px;
     }
 
     .item:hover img[b-v396g7pthq] {

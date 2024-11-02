@@ -1,0 +1,63 @@
+﻿/* Seção Popular */
+.popular-items {
+    display: flex;  
+    gap: 15px; 
+    overflow-x: auto; 
+    overflow-y: hidden;  
+    white-space: nowrap;  
+    max-width: 100%; 
+    padding-bottom: 10px;  
+}
+
+.popular-item {
+    min-width: 250px;
+    max-width: 300px;
+    max-height: 386px;
+    text-align: center;
+    scroll-snap-align: start;
+    
+}
+
+    .popular-item img {
+        width: 100%;  
+        border-radius: 5px;
+  
+    }
+
+    .popular-item:hover img {
+        display:none;
+        
+    }
+    .popular-item:hover {
+        /*background-image: url('/images/Ore.gif' )*/;
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        animation: increaseleft 0.5s forwards;
+    }
+
+@keyframes increaseleft {
+    from {
+        left: 0; /* Começa no lado esquerdo */
+        width: 0; /* Começa com largura 0 */
+    }
+
+    to {
+        left: 0; /* Permanece no lado esquerdo */
+        min-width: 750px; /* Aumenta para a largura total do contêiner */
+    }
+}
+
+/*/* Estilizando a barra de rolagem (opcional) */
+.popular-items::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.popular-items::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+    .popular-items::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do "thumb" ao passar o mouse */
+    }

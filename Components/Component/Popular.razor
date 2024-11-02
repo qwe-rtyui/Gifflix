@@ -1,0 +1,64 @@
+﻿@rendermode InteractiveServer
+<div class="popular-items">
+    @for (int i = 0; i < 15; i++)
+    {
+        @foreach (var item in PopularItems)
+        {
+            <div class="popular-item"
+                 @onmouseover="() => ShowBackground(item)"
+                 @onmouseout="HideBackground"
+                 style="@GetBackgroundStyle(item)">
+                <img src="/images/mona.jpg" alt="Lorem Ipsum" />
+            </div>
+        }
+
+        @* <div class="popular-item">
+            <img class="image" src="/images/mona.jpg" alt="Lorem Ipsum">
+           </div> *@
+    }
+</div>
+@code {
+    // Lista de itens populares com URLs de fundo
+    private List<PopularItem> PopularItems { get; set; } = new List<PopularItem>
+    {
+        new PopularItem { Id = 1, BackgroundUrl = "/images/Ore.gif" },
+        // Adicione mais itens conforme necessário
+    };
+
+    // Estado para controlar a imagem de fundo do item atual
+    private string CurrentBackgroundUrl { get; set; } = string.Empty;
+    private int? HoveredItemId { get; set; } = null;
+
+    // Métodos de exibição de fundo
+    private void ShowBackground(PopularItem item)
+    {
+        CurrentBackgroundUrl = item.BackgroundUrl;
+        HoveredItemId = item.Id;
+    }
+
+    private async void HideBackground()
+    {
+        await Task.Delay(200000);
+        CurrentBackgroundUrl = string.Empty;
+        HoveredItemId = null;
+        
+
+    }
+
+    // Define o estilo do fundo dinamicamente
+    private string GetBackgroundStyle(PopularItem item)
+    {
+        if (item.Id == HoveredItemId)
+        {
+            return $"background-image: url('{CurrentBackgroundUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; flex-grow: 2; z-index: 1;";
+        }
+        return string.Empty;
+    }
+
+    // Classe para representar o item popular
+    private class PopularItem
+    {
+        public int Id { get; set; }
+        public string BackgroundUrl { get; set; }
+    }
+}

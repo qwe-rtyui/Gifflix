@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5YWfQH2lWqr+D2+Obr3LFNmikC0nFggGcCnI2zWpTEE=",
+  "Hash": "FZ8MTRQkxTCIJQGCYJFL/I/L3DxIC0BbjRiSVWtBgJI=",
   "Source": "Gifflix",
   "BasePath": "_content/Gifflix",
   "Mode": "Default",
@@ -188,6 +188,25 @@
       "OriginalItemSpec": "wwwroot\\images\\mona.jpg"
     },
     {
+      "Identity": "G:\\Projetos\\Gifflix\\wwwroot\\images\\one.jpg",
+      "SourceId": "Gifflix",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Projetos\\Gifflix\\wwwroot\\",
+      "BasePath": "_content/Gifflix",
+      "RelativePath": "images/one.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\one.jpg"
+    },
+    {
       "Identity": "G:\\Projetos\\Gifflix\\wwwroot\\images\\Ore.gif",
       "SourceId": "Gifflix",
       "SourceType": "Discovered",
@@ -205,6 +224,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Ore.gif"
+    },
+    {
+      "Identity": "G:\\Projetos\\Gifflix\\wwwroot\\images\\tensei.jpg",
+      "SourceId": "Gifflix",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Projetos\\Gifflix\\wwwroot\\",
+      "BasePath": "_content/Gifflix",
+      "RelativePath": "images/tensei.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\tensei.jpg"
+    },
+    {
+      "Identity": "G:\\Projetos\\Gifflix\\wwwroot\\images\\yu.jpg",
+      "SourceId": "Gifflix",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Projetos\\Gifflix\\wwwroot\\",
+      "BasePath": "_content/Gifflix",
+      "RelativePath": "images/yu.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\yu.jpg"
     }
   ]
 }

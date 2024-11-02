@@ -42,6 +42,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/Projetos/Gifflix/Components/Component/Banner.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRcQmFubmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3558fstnit
+
+[G:/Projetos/Gifflix/Components/Component/Popular.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRcUG9wdWxhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-lplqvy3csw
+
 [G:/Projetos/Gifflix/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gi4iy8j4vi

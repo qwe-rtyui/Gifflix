@@ -37,6 +37,18 @@
       "PackagePath": "staticwebassets\\images\\mona.jpg"
     },
     {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\one.jpg",
+      "PackagePath": "staticwebassets\\images\\one.jpg"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\tensei.jpg",
+      "PackagePath": "staticwebassets\\images\\tensei.jpg"
+    },
+    {
+      "Id": "G:\\Projetos\\Gifflix\\wwwroot\\images\\yu.jpg",
+      "PackagePath": "staticwebassets\\images\\yu.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Gifflix.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

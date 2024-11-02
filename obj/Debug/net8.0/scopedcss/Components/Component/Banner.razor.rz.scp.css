@@ -1,0 +1,51 @@
+/* Banner principal */
+.banner-content[b-3558fstnit] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.badge[b-3558fstnit] {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title[b-3558fstnit] {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description[b-3558fstnit] {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.buttons[b-3558fstnit] {
+    display: flex;
+    gap: 10px;
+}
+
+.play-button[b-3558fstnit], .my-list-button[b-3558fstnit] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-button[b-3558fstnit] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.my-list-button[b-3558fstnit] {
+    background-color: #333;
+    color: white;
+}

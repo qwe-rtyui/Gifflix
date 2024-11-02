@@ -20,58 +20,6 @@
     margin-bottom: 20px;
 }
 
-.banner-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
-    height: -webkit-fill-available;
-    padding: 30px;
-    max-width: 600px;
-}
-
-.badge {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.title {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-.description {
-    font-size: 1.1em;
-    margin: 15px 0;
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.play-button, .my-list-button {
-    padding: 10px 20px;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.play-button {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-}
-
-.my-list-button {
-    background-color: #333;
-    color: white;
-}
-
-
 /* Seção Popular */
 .popular-section {
     margin-top: 20px;
@@ -83,46 +31,7 @@
         margin-bottom: 10px;
     }
 
-.popular-items {
-    display: flex; /* Exibe os itens em linha */
-    gap: 15px; /* Espaço entre os itens */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    overflow-y: hidden; /* Impede rolagem vertical */
-    white-space: nowrap; /* Impede quebra de linha */
-    max-width: 100%; /* Limita a largura ao contêiner pai */
-    padding-bottom: 10px; /* Espaço para a barra de rolagem */
-}
 
-.popular-item {
-    min-width: 150px; /* Largura mínima dos itens */
-    max-width: 200px; /* Largura máxima dos itens */
-    text-align: center;
-    scroll-snap-align: start; /* Para alinhar itens ao parar a rolagem */
-}
-
-    .popular-item img {
-        width: 100%; /* Ajusta a imagem à largura do item */
-        border-radius: 5px;
-    }
-
-    .popular-item p {
-        margin-top: 5px; /* Espaço acima do texto */
-        font-size: 0.9em;
-    }
-
-/* Estilizando a barra de rolagem (opcional) */
-.popular-items::-webkit-scrollbar {
-    height: 8px; /* Altura da barra de rolagem */
-}
-
-.popular-items::-webkit-scrollbar-thumb {
-    background: #888; /* Cor do "thumb" da barra de rolagem */
-    border-radius: 10px; /* Bordas arredondadas */
-}
-
-    .popular-items::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Cor do "thumb" ao passar o mouse */
-    }
 
 /* Seção item */
 .item-section {
@@ -139,6 +48,7 @@
     }
 
 .items {
+    margin-top: 25px;
     display: flex; /* Exibe os itens em linha */
     gap: 15px; /* Espaço entre os itens */
     overflow-x: auto; /* Permite rolagem horizontal */
@@ -159,6 +69,7 @@
         width: 100%;
         border-radius: 5px;
         transition: transform 0.5s ease; /* Adicione a transição à imagem */
+        max-height: 168px;
     }
 
     .item:hover img {
@@ -168,6 +79,7 @@
         transition: transform 0.5s ease;
         position: absolute;
         z-index: 1;
+        max-height: 175px;
     }
 
     .item:hover img {
