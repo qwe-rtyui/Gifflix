@@ -113,13 +113,6 @@
     color: red;
 }
 
-
-
-.item:hover .item-hover {
-    height: 100px;
-    width: 100px;
-    background-color: darkred;
-}
 /* Estilizando a barra de rolagem (opcional) */
 .items::-webkit-scrollbar {
     height: 8px; /* Altura da barra de rolagem */
