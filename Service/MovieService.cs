@@ -10,14 +10,14 @@ public class MovieService
 {
     private readonly HttpClient _httpClient;
 
-    public MovieService(HttpClient httpClient)
+    public MovieService(IHttpClientFactory httpClientFactory)
     {
-        _httpClient = httpClient;
+        _httpClient = httpClientFactory.CreateClient("TMDbClient");
     }
 
     public async Task<MovieResponse> GetPopularMoviesAsync(string search)
     {
-        var response = await _httpClient.GetFromJsonAsync<MovieResponse>(search);
+        var response = await _httpClient.GetFromJsonAsync<MovieResponse>("movie/popular?language=en-US&page=1");
 
         if (response != null)
         {

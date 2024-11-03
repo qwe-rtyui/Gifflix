@@ -1,7 +1,11 @@
 ﻿@page "/"
 
 @using Gifflix.Models
+@using Gifflix.Service
 @inject MovieService MovieService
+@inject GiphyService GiphyService
+
+@rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
@@ -99,6 +103,11 @@
             border-radius: 8px;
         }
 
+    .gif-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 </style>
 
 @if (popularMovies == null)
@@ -119,12 +128,40 @@ else
     </div>
 }
 
+
+
+<h3>Search GIFs</h3>
+
+<input @bind="searchQuery" placeholder="Search for GIFs" />
+<button @onclick="SearchGifs">Search</button>
+
+@if (gifs != null)
+{
+    <div class="gif-container">
+        @foreach (var gif in gifs.Data)
+        {
+            <div class="gif-item">
+                <img src="@gif.Images.DownsizedMedium.Url" alt="GIF" />
+            </div>
+        }
+    </div>
+}
+
 @code {
     private MovieResponse popularMovies;
+    private string searchQuery;
+    private GiphyResponse gifs;
+
 
     protected override async Task OnInitializedAsync()
     {
-        popularMovies = await MovieService.GetPopularMoviesAsync("movie/popular?language=pt-BR&page=2");
+        popularMovies = await MovieService.GetPopularMoviesAsync($"movie/popular?language=en-US&page=1");
+    }
+
+    
+    private async Task SearchGifs()
+    {
+        gifs = await GiphyService.SearchGifsAsync(searchQuery);
     }
 
 }

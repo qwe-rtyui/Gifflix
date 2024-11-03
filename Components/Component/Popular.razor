@@ -6,7 +6,7 @@
         @foreach (var movie in popularMovies.Results)
 
         {
-            <div class="popular-item" @onmouseover="() => ShowBackground(movie.Id, movie.FullPosterPath)" @onmouseout="HideBackground" style="@GetBackgroundStyle(movie.Id, movie.FullPosterPath)">
+            <div class="popular-item" @onmouseover="() => ShowBackground(movie.Id, movie.FullbackdropUrl)" @onmouseout="HideBackground" style="@GetBackgroundStyle(movie.Id, movie.FullbackdropUrl)">
                 <img src="@movie.FullPosterPath" alt="Lorem Ipsum" />
                 <div class="banner-content">
                     <h1 class="title">@movie.Title</h1>
