@@ -1,5 +1,8 @@
 ﻿@page "/"
 
+@using Gifflix.Models
+@inject MovieService MovieService
+
 <PageTitle>Home</PageTitle>
 
 <div class="home-page">
@@ -11,7 +14,7 @@
     <!-- Seção "Popular on Gifflix" -->
     <div class="popular-section">
         <h2>Popular on Gifflix</h2>
-        <Popular />
+        <Popular PopularMovies="@popularMovies" />
     </div>
 
     <!-- Seção "Item on Gifflix" -->
@@ -37,7 +40,7 @@
     <div class="item-section">
         <h2>Popular on Gifflix</h2>
         <Item />
-    </div>
+    </div> 
     <div class="item-section">
         <h2>Popular on Gifflix</h2>
         <div class="items">
@@ -78,3 +81,50 @@
     </div>
     <div style="margin-bottom:100px"></div>
 </div>
+
+<style>
+    .movies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .movie {
+        width: 200px;
+        text-align: center;
+    }
+
+        .movie img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+</style>
+
+@if (popularMovies == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="movies">
+        @foreach (var movie in popularMovies.Results)
+        {
+            <div class="movie">
+                <img src="@movie.FullPosterPath" alt="@movie.Title" />
+                <h4>@movie.Title</h4>
+                <p>@movie.Overview</p>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private MovieResponse popularMovies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        popularMovies = await MovieService.GetPopularMoviesAsync("movie/popular?language=pt-BR&page=2");
+    }
+
+}

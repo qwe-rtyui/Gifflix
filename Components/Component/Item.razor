@@ -1,4 +1,4 @@
-﻿<div class="items">
+﻿<div class="items" style="@Style">
     @for (int i = 0; i < 15; i++)
     {
         <div class="item">
@@ -12,12 +12,14 @@
                 </div>
             </div>
         </div>
-        <div class="item-hover">
+        @* <div class="item-hover">
 
-        </div>
+        </div> *@
 
     }
 </div>
 @code {
+    [Parameter]
+    public string Style { get; set; } = string.Empty;
 
 }

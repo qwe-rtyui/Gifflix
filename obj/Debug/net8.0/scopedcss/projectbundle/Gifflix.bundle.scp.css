@@ -166,13 +166,6 @@
     color: red;
 }
 
-
-
-.item:hover .item-hover[b-6hqzgyswyi] {
-    height: 100px;
-    width: 100px;
-    background-color: darkred;
-}
 /* Estilizando a barra de rolagem (opcional) */
 .items[b-6hqzgyswyi]::-webkit-scrollbar {
     height: 8px; /* Altura da barra de rolagem */
@@ -222,7 +215,7 @@
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
-        animation: increaseleft-b-lplqvy3csw 0.5s forwards;
+        animation: increaseleft-b-lplqvy3csw 0.7s forwards;
     }
 
 @keyframes increaseleft-b-lplqvy3csw {
@@ -670,4 +663,40 @@ body[b-z0ljggkvxf] {
 
     .items[b-v396g7pthq]::-webkit-scrollbar-thumb:hover {
         background: #555; /* Cor do "thumb" ao passar o mouse */
+    }
+/* _content/Gifflix/Components/Pages/MyList.razor.rz.scp.css */
+.myList-page[b-bp1kitvbjz] {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+}
+
+.myList-section[b-bp1kitvbjz] {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+}
+
+    .myList-section h2[b-bp1kitvbjz] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+/* _content/Gifflix/Components/Pages/RecentlyAdded.razor.rz.scp.css */
+.recentlyAdded-page[b-4o8fx9vm4l] {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+}
+
+.recently-section[b-4o8fx9vm4l] {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+}
+
+    .recently-section h2[b-4o8fx9vm4l] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
     }

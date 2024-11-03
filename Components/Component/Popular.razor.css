@@ -33,7 +33,7 @@
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
-        animation: increaseleft 0.5s forwards;
+        animation: increaseleft 0.7s forwards;
     }
 
 @keyframes increaseleft {

@@ -1,0 +1,17 @@
+﻿.myList-page {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+}
+
+.myList-section {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+}
+
+    .myList-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }

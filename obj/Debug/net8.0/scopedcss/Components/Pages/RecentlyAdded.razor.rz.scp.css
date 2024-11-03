@@ -1,0 +1,17 @@
+.recentlyAdded-page[b-4o8fx9vm4l] {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 100vw;
+}
+
+.recently-section[b-4o8fx9vm4l] {
+    margin-top: 20px;
+    overflow: hidden; /* Impede que os itens quebrem o contêiner */
+}
+
+    .recently-section h2[b-4o8fx9vm4l] {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }

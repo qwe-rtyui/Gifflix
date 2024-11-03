@@ -22,16 +22,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Projetos/Gifflix/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [G:/Projetos/Gifflix/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/Projetos/Gifflix/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Projetos/Gifflix/Components/Routes.razor]
@@ -69,3 +61,11 @@ build_metadata.AdditionalFiles.CssScope = b-z0ljggkvxf
 [G:/Projetos/Gifflix/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-v396g7pthq
+
+[G:/Projetos/Gifflix/Components/Pages/MyList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNeUxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bp1kitvbjz
+
+[G:/Projetos/Gifflix/Components/Pages/RecentlyAdded.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWNlbnRseUFkZGVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-4o8fx9vm4l

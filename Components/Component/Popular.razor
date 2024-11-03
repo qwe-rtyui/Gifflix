@@ -1,13 +1,15 @@
-﻿@rendermode InteractiveServer
+﻿@using Gifflix.Models
+@rendermode InteractiveServer
 <div class="popular-items">
-    @for (int i = 0; i < 15; i++)
+    @if (popularMovies is not null)
     {
-        @foreach (var item in PopularItems)
+        @foreach (var movie in popularMovies.Results)
+
         {
-            <div class="popular-item" @onmouseover="() => ShowBackground(item)" @onmouseout="HideBackground" style="@GetBackgroundStyle(item)">
-                <img src="/images/mona.jpg" alt="Lorem Ipsum" />
-                <div class="banner-content">                    
-                    <h1 class="title">Lorem Ipsum</h1>                    
+            <div class="popular-item" @onmouseover="() => ShowBackground(movie.Id, movie.FullPosterPath)" @onmouseout="HideBackground" style="@GetBackgroundStyle(movie.Id, movie.FullPosterPath)">
+                <img src="@movie.FullPosterPath" alt="Lorem Ipsum" />
+                <div class="banner-content">
+                    <h1 class="title">@movie.Title</h1>
                     <div class="buttons">
                         <button class="play-button">More Details</button>
                         <button class="my-list-button">+</button>
@@ -15,13 +17,17 @@
                 </div>
             </div>
         }
-
-        @* <div class="popular-item">
-    <img class="image" src="/images/mona.jpg" alt="Lorem Ipsum">
-    </div> *@
     }
+    else
+    {
+        <p>Loading...</p>
+    }   
+
+    
 </div>
 @code {
+    [Parameter]
+    public MovieResponse popularMovies { get; set; }
 
     private string CurrentBackgroundUrl { get; set; } = string.Empty;
     private int? HoveredItemId { get; set; } = null;
@@ -32,10 +38,10 @@
         new PopularItem { Id = 1, BackgroundUrl = "/images/Ore.gif" }
     };
 
-    private void ShowBackground(PopularItem item)
+    private void ShowBackground(int Id, string MovieURL)
     {
-        CurrentBackgroundUrl = item.BackgroundUrl;
-        HoveredItemId = item.Id;
+        CurrentBackgroundUrl = MovieURL;
+        HoveredItemId = Id;
     }
 
     private void HideBackground()
@@ -44,9 +50,9 @@
         HoveredItemId = null;
     }
 
-    private string GetBackgroundStyle(PopularItem item)
+    private string GetBackgroundStyle(int Id, string MovieURL)
     {
-        if (item.Id == HoveredItemId)
+        if (Id == HoveredItemId)
         {
             return $"background-image: url('{CurrentBackgroundUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; flex-grow: 2; z-index: 1;";
         }

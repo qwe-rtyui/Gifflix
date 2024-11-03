@@ -1,10 +1,24 @@
 using Gifflix.Components;
+using System.Net.Http.Headers;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+
+// Configuração do HttpClient para a API do TMDb
+builder.Services.AddScoped(sp => {
+    var client = new HttpClient { BaseAddress = new Uri("https://api.themoviedb.org/3/") };
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDc0ZDU1NjU1NGFjMmI5ZjUxOTE1NjgxMGRjZjZiYSIsIm5iZiI6MTczMDU4NTg0Ni42NTg3ODg0LCJzdWIiOiI2NzI2YTM0YWMwOTAxMDk1ODBmOWMyMTEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4EZI6PDdMin7XP54vxrA7Z45R9kStQK5ZJpmJVZyoWY"); // substitua YOUR_ACCESS_TOKEN pelo seu token
+    return client;
+});
+
+builder.Services.AddScoped<MovieService>();
+
 
 var app = builder.Build();
 

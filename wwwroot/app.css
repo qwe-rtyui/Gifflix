@@ -2,7 +2,7 @@ html, body {
     /*font-family: 'Neue Plak', Helvetica, sans-serif;*/
     font-family: Arial, sans-serif;
     color: white;
-    background-color: #141414;
+    background-color: black;
     overflow-y: auto;
 }
     html::-webkit-scrollbar {

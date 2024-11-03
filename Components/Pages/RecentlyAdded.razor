@@ -1,0 +1,19 @@
+﻿@page "/recently"
+@rendermode InteractiveServer
+
+<PageTitle>Recently Added</PageTitle>
+
+<div class="recentlyAdded-page">
+    <div class="recently-section">
+        <h2>Recently Added on Gifflix</h2>
+        <Item Style="@recentlyStyle" />
+    </div>
+    <div class="" style="margin-top: 100px">
+    </div>
+</div>
+
+
+@code {
+    private string recentlyStyle = $"flex-direction: row; flex-wrap: wrap; justify-content: center;padding-left: 25px;padding-right: 25px;";
+
+}

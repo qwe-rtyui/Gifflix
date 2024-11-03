@@ -1,0 +1,19 @@
+﻿@page "/mylist"
+@attribute [StreamRendering]
+
+<PageTitle>My List</PageTitle>
+
+<div class="myList-page">
+    <div class="myList-section">
+        <h2>My List on Gifflix</h2>
+        <Item Style="@myListStyle" />
+    </div>
+    <div class="" style="margin-top: 100px">
+    </div>
+</div>
+
+
+@code {
+    private string myListStyle = $"flex-direction: row; flex-wrap: wrap; justify-content: center;padding-left: 25px;padding-right: 25px;";
+
+}
