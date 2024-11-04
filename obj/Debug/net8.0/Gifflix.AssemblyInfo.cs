@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gifflix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94f96268ac8cccb9edf3a70f446150cf55ff8737")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51da002e7b1ee79ede7be4a421dc782c3ed5b0d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gifflix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gifflix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

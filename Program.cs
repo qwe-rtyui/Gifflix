@@ -1,51 +1,45 @@
 using Gifflix.Components;
 using Gifflix.Service;
+using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
-
-
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Carrega as configurações do appsettings.json
+builder.Configuration.AddJsonFile("config.json", optional: false, reloadOnChange: true);
+
+// Configura serviços do Razor Components
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-
-// Configuração do HttpClient para a API do TMDb
-//builder.Services.AddScoped(sp => {
-//    var client = new HttpClient { BaseAddress = new Uri("https://api.themoviedb.org/3/") };
-//    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ""); // substitua YOUR_ACCESS_TOKEN pelo seu token
-//    return client;
-//});
-
+// Configura HttpClient para TMDb com token do arquivo de configuração
 builder.Services.AddHttpClient("TMDbClient", client =>
 {
     client.BaseAddress = new Uri("https://api.themoviedb.org/3/");
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDc0ZDU1NjU1NGFjMmI5ZjUxOTE1NjgxMGRjZjZiYSIsIm5iZiI6MTczMDU4NTg0Ni42NTg3ODg0LCJzdWIiOiI2NzI2YTM0YWMwOTAxMDk1ODBmOWMyMTEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4EZI6PDdMin7XP54vxrA7Z45R9kStQK5ZJpmJVZyoWY");
+    var token = builder.Configuration["TMDb:BearerToken"];
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 });
 
+// Configura HttpClient para Giphy
 builder.Services.AddHttpClient("GiphyClient", client =>
 {
     client.BaseAddress = new Uri("https://api.giphy.com/v1/");
 });
 
-
+// Registra os serviços MovieService e GiphyService
 builder.Services.AddScoped<MovieService>();
 builder.Services.AddScoped<GiphyService>();
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuração do pipeline de requisição HTTP
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
 app.UseAntiforgery();
 

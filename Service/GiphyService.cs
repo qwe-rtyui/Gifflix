@@ -9,16 +9,17 @@ namespace Gifflix.Service
     public class GiphyService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "t16ZR2PbsAEwAxXG3aGVsgkJLjJQRiq9"; // Substitua pela sua chave de API
+        private readonly string _apiKey;
 
-        public GiphyService(IHttpClientFactory httpClientFactory)
+        public GiphyService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _httpClient = httpClientFactory.CreateClient("GiphyClient");
+            _apiKey = configuration["Giphy:ApiKey"]; // Busca a chave da configuração
         }
 
         public async Task<GiphyResponse> SearchGifsAsync(string query)
         {
-            // Monta a URL da busca
+            // Monta a URL da busca usando a chave da configuração
             var url = $"gifs/search?api_key={_apiKey}&q={query}&limit=10&rating=g";
             return await _httpClient.GetFromJsonAsync<GiphyResponse>(url);
         }

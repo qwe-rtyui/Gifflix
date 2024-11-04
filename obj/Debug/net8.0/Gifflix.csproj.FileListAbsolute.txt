@@ -35,3 +35,4 @@ G:\Projetos\Gifflix\obj\Debug\net8.0\refint\Gifflix.dll
 G:\Projetos\Gifflix\obj\Debug\net8.0\Gifflix.pdb
 G:\Projetos\Gifflix\obj\Debug\net8.0\Gifflix.genruntimeconfig.cache
 G:\Projetos\Gifflix\obj\Debug\net8.0\ref\Gifflix.dll
+G:\Projetos\Gifflix\bin\Debug\net8.0\config.json
