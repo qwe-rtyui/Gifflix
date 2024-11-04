@@ -29,4 +29,37 @@ public class MovieService
 
         return response;
     }
+
+    public async Task<Movie> GetMovieDetailsAsync(int movieId)
+    {
+        // Chama o endpoint para obter um filme específico
+        var movie = await _httpClient.GetFromJsonAsync<Movie>($"movie/{movieId}?language=en-US");
+
+        if (movie != null)
+        {
+            Console.WriteLine($"Title: {movie.Title}, PosterPath: {movie.PosterPath}");
+        }
+
+        return movie;
+    }
+
+    public async Task<List<Genre>> GetGenresAsync()
+    {
+        // Chama o endpoint de gêneros
+        var genreResponse = await _httpClient.GetFromJsonAsync<GenreResponse>("genre/movie/list?language=en-US");
+
+        return genreResponse?.Genres ?? new List<Genre>();
+    }
+
+    public async Task<List<Movie>> GetMoviesByGenreAsync(int genreId)
+    {
+        // Monta a URL com o filtro de gênero
+        var url = $"discover/movie?with_genres={genreId}&language=en-US";
+
+        // Faz a requisição e obtém a resposta
+        var movieResponse = await _httpClient.GetFromJsonAsync<MovieResponse>(url);
+
+        return movieResponse?.Results ?? new List<Movie>();
+    }
+
 }

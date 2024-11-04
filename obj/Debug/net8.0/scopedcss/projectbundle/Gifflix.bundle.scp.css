@@ -60,6 +60,7 @@
     white-space: nowrap; /* Impede quebra de linha */
     max-width: 100%; /* Limita a largura ao contêiner pai */
     padding-bottom: 10px; /* Espaço para a barra de rolagem */
+    padding-top: 30px;
 }
 
 .item[b-6hqzgyswyi] {
@@ -72,30 +73,26 @@
     .item img[b-6hqzgyswyi] {
         width: 100%;
         border-radius: 5px;
-        transition: transform 0.5s ease; /* Adicione a transição à imagem */
-        max-height: 168px;
-    }
-
-    .item:hover img[b-6hqzgyswyi] {
-        min-width: 310px;
-        max-width: 200px;
-        transform: scale(1.3);
         transition: transform 0.5s ease;
-        position: absolute;
-        z-index: 1;
-        max-height: 175px;
+    }
+iimg[b-6hqzgyswyi] {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+    /*.item:hover img {
+        transition: transform 0.5s ease;
     }
 
-    .item:hover img[b-6hqzgyswyi] {
-        opacity: 1; /* Torna o overlay visível ao passar o mouse */
-    }
+    .item:hover img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: increaseleft 0.7s forwards;
+    }*/
 
-    .item:hover:first-child img[b-6hqzgyswyi] {
-        margin-left: 40px;
-    }
-
-    .item:hover:last-child img[b-6hqzgyswyi] {
-        background-color: lightgreen; /* Estilo para o último item */
+    .item:hover p[b-6hqzgyswyi] {
+        display:none;
     }
 
 .menu[b-6hqzgyswyi] {
@@ -127,14 +124,13 @@
 .items-menu[b-6hqzgyswyi] {
     display: none;
     padding: 10px;
-    font-size: 25px;    
+    font-size: 25px;
 }
 
 .item:hover .items-menu[b-6hqzgyswyi] {
     display: block;
     padding: 10px;
     font-size: 25px;
-
     display: flex;
     align-items: flex-end;
     height: -webkit-fill-available;
@@ -486,7 +482,84 @@ main[b-gi4iy8j4vi] {
     }
 }
 /* _content/Gifflix/Components/Pages/Datail.razor.rz.scp.css */
-body[b-z0ljggkvxf] {
+/* Banner principal */
+.banner[b-z0ljggkvxf] {
+    background-size: cover;
+    background-position: center;
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    /*padding: 20px;*/
+    /*margin-bottom: 20px;*/
+}
+
+.banner-content[b-z0ljggkvxf] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.banner-content-end[b-z0ljggkvxf] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.badge[b-z0ljggkvxf] {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title[b-z0ljggkvxf] {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description[b-z0ljggkvxf] {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.buttons[b-z0ljggkvxf] {
+    display: flex;
+    gap: 10px;
+}
+
+.play-button[b-z0ljggkvxf], .my-list-button[b-z0ljggkvxf] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-button[b-z0ljggkvxf] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.my-list-button[b-z0ljggkvxf] {
+    background-color: #333;
+    color: white;
+}
+
+.gif-container[b-z0ljggkvxf] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 /* _content/Gifflix/Components/Pages/Home.razor.rz.scp.css */
 /* Estilos gerais da página */
@@ -499,8 +572,7 @@ body[b-z0ljggkvxf] {
 }
 
 /* Banner principal */
-.banner[b-v396g7pthq] {
-    background-image: url('/images/Ore.gif');
+.banner[b-v396g7pthq] {    
     background-size: cover;
     background-position: center;
     height: 500px;

@@ -1,2 +1,79 @@
-body[b-z0ljggkvxf] {
+/* Banner principal */
+.banner[b-z0ljggkvxf] {
+    background-size: cover;
+    background-position: center;
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    /*padding: 20px;*/
+    /*margin-bottom: 20px;*/
+}
+
+.banner-content[b-z0ljggkvxf] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: linear-gradient(to right, #000000, #000000d6, #00000000);
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.banner-content-end[b-z0ljggkvxf] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: -webkit-fill-available;
+    padding: 30px;
+    max-width: 600px;
+}
+
+.badge[b-z0ljggkvxf] {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title[b-z0ljggkvxf] {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description[b-z0ljggkvxf] {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.buttons[b-z0ljggkvxf] {
+    display: flex;
+    gap: 10px;
+}
+
+.play-button[b-z0ljggkvxf], .my-list-button[b-z0ljggkvxf] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-button[b-z0ljggkvxf] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.my-list-button[b-z0ljggkvxf] {
+    background-color: #333;
+    color: white;
+}
+
+.gif-container[b-z0ljggkvxf] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }

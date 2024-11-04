@@ -8,8 +8,7 @@
 }
 
 /* Banner principal */
-.banner {
-    background-image: url('/images/Ore.gif');
+.banner {    
     background-size: cover;
     background-position: center;
     height: 500px;

@@ -2,6 +2,8 @@
 
 @using Gifflix.Models
 @using Gifflix.Service
+
+@inject NavigationManager NavigationManager
 @inject MovieService MovieService
 @inject GiphyService GiphyService
 
@@ -11,14 +13,14 @@
 
 <div class="home-page">
     <!-- Banner principal com detalhes da série/filme em destaque -->
-    <div class="banner">
+    <div class="banner" style="background-image: url('/images/Ore.gif');">
         <Banner />
     </div>
 
     <!-- Seção "Popular on Gifflix" -->
     <div class="popular-section">
         <h2>Popular on Gifflix</h2>
-        <Popular PopularMovies="@popularMovies" />
+        <Popular PopularMovies="@popularMovies" MoreDetails="GoToDetailPage" />
     </div>
 
     <!-- Seção "Item on Gifflix" -->
@@ -41,10 +43,24 @@
             }
         </div>
     </div>
-    <div class="item-section">
+@*     <div class="item-section">
         <h2>Popular on Gifflix</h2>
         <Item />
-    </div> 
+    </div> *@
+    @if (genres != null && genres.Count > 0)
+    {
+        @for (int i = 0; i < Math.Min(genres.Count, 5); i++)
+        {
+            <div class="item-section">
+                <h2>@genres[i].Name</h2>
+                <Item Genre="@genres[i]" />
+            </div>
+        }
+    }
+    else
+    {
+        <p>Nenhum gênero disponível.</p>
+    }
     <div class="item-section">
         <h2>Popular on Gifflix</h2>
         <div class="items">
@@ -86,79 +102,32 @@
     <div style="margin-bottom:100px"></div>
 </div>
 
-<style>
-    .movies {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .movie {
-        width: 200px;
-        text-align: center;
-    }
-
-        .movie img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-    .gif-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-</style>
-
-@if (popularMovies == null)
-{
-    <p>Loading...</p>
-}
-else
-{
-    <div class="movies">
-        @foreach (var movie in popularMovies.Results)
-        {
-            <div class="movie">
-                <img src="@movie.FullPosterPath" alt="@movie.Title" />
-                <h4>@movie.Title</h4>
-                <p>@movie.Overview</p>
-            </div>
-        }
-    </div>
-}
-
-
-
 <h3>Search GIFs</h3>
 
 <input @bind="searchQuery" placeholder="Search for GIFs" />
 <button @onclick="SearchGifs">Search</button>
 
-@if (gifs != null)
-{
-    <div class="gif-container">
-        @foreach (var gif in gifs.Data)
-        {
-            <div class="gif-item">
-                <img src="@gif.Images.DownsizedMedium.Url" alt="GIF" />
-            </div>
-        }
-    </div>
-}
+
 
 @code {
     private MovieResponse popularMovies;
     private string searchQuery;
     private GiphyResponse gifs;
 
+    private List<Genre> genres = new List<Genre>();
 
     protected override async Task OnInitializedAsync()
     {
+        genres = await MovieService.GetGenresAsync();
         popularMovies = await MovieService.GetPopularMoviesAsync($"movie/popular?language=en-US&page=1");
     }
 
-    
+    private void GoToDetailPage(int movieId)
+    {
+        NavigationManager.NavigateTo($"/detail/title/{movieId}");
+    }
+
+
     private async Task SearchGifs()
     {
         gifs = await GiphyService.SearchGifsAsync(searchQuery);

@@ -19,6 +19,8 @@ namespace Gifflix.Models
 
         [JsonPropertyName("backdrop_path")]
         public string BackdropPath { get; set; }  // banner
+
+        [JsonPropertyName("release_date")]
         public string ReleaseDate { get; set; }
         public int Runtime { get; set; }
         public double Popularity { get; set; }
@@ -37,7 +39,7 @@ namespace Gifflix.Models
 
         // banner
         public string FullbackdropUrl => !string.IsNullOrEmpty(BackdropPath)
-        ? $"https://image.tmdb.org/t/p/w500{BackdropPath}"
+        ? $"https://image.tmdb.org/t/p/original{BackdropPath}"
         : "https://via.placeholder.com/500x750?text=No+Image";
 
         
@@ -57,7 +59,11 @@ namespace Gifflix.Models
         public string LogoPath { get; set; }
         public string OriginCountry { get; set; }
     }
-
+        
+    public class GenreResponse
+    {
+        public List<Genre> Genres { get; set; }
+    }
 
     public class antigo
     {

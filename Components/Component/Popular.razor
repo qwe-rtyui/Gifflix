@@ -1,17 +1,16 @@
 ﻿@using Gifflix.Models
 @rendermode InteractiveServer
 <div class="popular-items">
-    @if (popularMovies is not null)
+    @if (PopularMovies is not null)
     {
-        @foreach (var movie in popularMovies.Results)
-
+        @foreach (var movie in PopularMovies.Results)
         {
             <div class="popular-item" @onmouseover="() => ShowBackground(movie.Id, movie.FullbackdropUrl)" @onmouseout="HideBackground" style="@GetBackgroundStyle(movie.Id, movie.FullbackdropUrl)">
                 <img src="@movie.FullPosterPath" alt="Lorem Ipsum" />
                 <div class="banner-content">
                     <h1 class="title">@movie.Title</h1>
                     <div class="buttons">
-                        <button class="play-button">More Details</button>
+                        <button class="play-button" @onclick="@(() => MoreDetails.InvokeAsync(movie.Id))">More Details</button>
                         <button class="my-list-button">+</button>
                     </div>
                 </div>
@@ -27,16 +26,13 @@
 </div>
 @code {
     [Parameter]
-    public MovieResponse popularMovies { get; set; }
+    public MovieResponse PopularMovies { get; set; }
+
+    [Parameter]
+    public EventCallback<int> MoreDetails { get; set; }
 
     private string CurrentBackgroundUrl { get; set; } = string.Empty;
     private int? HoveredItemId { get; set; } = null;
-
-    // Lista de itens populares com URLs de fundo
-    private List<PopularItem> PopularItems { get; set; } = new List<PopularItem>
-    {
-        new PopularItem { Id = 1, BackgroundUrl = "/images/Ore.gif" }
-    };
 
     private void ShowBackground(int Id, string MovieURL)
     {
@@ -57,11 +53,5 @@
             return $"background-image: url('{CurrentBackgroundUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; flex-grow: 2; z-index: 1;";
         }
         return string.Empty;
-    }
-
-    private class PopularItem
-    {
-        public int Id { get; set; }
-        public string BackgroundUrl { get; set; }
     }
 }

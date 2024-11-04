@@ -1,5 +1,109 @@
-﻿<h3>Datail</h3>
+﻿@page "/detail/title/{id:int}"
+
+@using Gifflix.Models
+@using Gifflix.Service
+@inject MovieService MovieService
+@inject GiphyService GiphyService
+
+@rendermode InteractiveServer
+
+@if (Movie is not null)
+{
+
+    <PageTitle>@Movie.Title</PageTitle>
+
+    <div class="banner" style="background-image: url('@Movie.FullbackdropUrl');">
+        <div class="banner-content">
+            <div class="badge">Gifflix</div>
+            <h1 class="title">@Movie.Title</h1>
+            <span>
+                @MovieformattedDate.ToString("yyyy")  |  @MovieformattedRuntime  |  @MovieformattedGenres
+            </span>
+            <p class="description">
+                @Movie.Overview
+            </p>
+            <div class="buttons">
+                <button class="play-button">▶ Play</button>
+                <button class="my-list-button">+ My List</button>
+            </div>
+        </div>
+        <div class="banner-content-end">
+            @if (gifs != null)
+            {
+                <div class="gif-container">
+                   @*  @foreach (var gif in gifs.Data[0])
+                    { *@
+                        <div class="gif-item">
+                            <img src="@gifs.Data[0].Images.DownsizedMedium.Url" alt="GIF" />
+                        </div>
+                    @* } *@
+                </div>
+            }
+        </div>
+    </div>
+
+}
+else
+{
+    <p>Loading...</p>
+}
 
 @code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Movie Movie;
+    private GiphyResponse gifs;
+
+    private string MovieformattedRuntime;
+    private DateTime MovieformattedDate;
+    private string MovieformattedGenres;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Aqui você pode usar o Id para buscar os detalhes do filme
+        Movie = await MovieService.GetMovieDetailsAsync(Id);
+
+        MovieformattedRuntime = ConvertRuntimeToHoursAndMinutes(Movie.Runtime);
+        MovieformattedDate = ConvertReleaseDateToyear(Movie.ReleaseDate);
+        MovieformattedGenres = ConvertListGenresToString(Movie.Genres);
+        await SearchGifs(Movie.Title);
+    }
+
+    public static string ConvertRuntimeToHoursAndMinutes(int runtime)
+    {
+        int hours = runtime / 60;
+        int minutes = runtime % 60;
+        return $"{hours}h{minutes:D2}";
+    }
+
+    public static DateTime ConvertReleaseDateToyear(string ReleaseDate)
+    {
+        DateTime date = DateTime.Parse(ReleaseDate);
+        return date;
+    }
+
+    public static string ConvertListGenresToString(List<Genre> Genres)
+    {        
+        string formattedGenres = string.Empty;
+
+        foreach (var genre in Genres)
+        {
+            formattedGenres += genre.Name + ", ";
+        }
+
+        // Remove a última vírgula e espaço, se existirem
+        if (formattedGenres.Length > 0)
+        {
+            formattedGenres = formattedGenres.TrimEnd(',', ' ');
+        }
+
+        return formattedGenres;
+    }
+
+    private async Task SearchGifs(string searchQuery)
+    {
+        gifs = await GiphyService.SearchGifsAsync($"{searchQuery} movie");
+    }
 
 }
