@@ -40,7 +40,7 @@ namespace Gifflix.Models
         // banner
         public string FullbackdropUrl => !string.IsNullOrEmpty(BackdropPath)
         ? $"https://image.tmdb.org/t/p/original{BackdropPath}"
-        : "https://via.placeholder.com/500x750?text=No+Image";
+        : "https://via.placeholder.com/299x168?text=No+Image";
 
         
 

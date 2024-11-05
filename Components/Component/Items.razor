@@ -1,0 +1,29 @@
+﻿@using Gifflix.Models
+@inject MovieService MovieService
+
+<div class="items" style="@Style">
+    @if (Movies != null && Movies.Count > 0)
+    {
+        @foreach (var movie in Movies)
+        {
+
+            <Item Movie="@movie"/>     
+        }
+    }
+</div>
+@code {
+    [Parameter]
+    public string Style { get; set; } = string.Empty;
+
+    [Parameter]
+    public Genre Genre { get; set; }
+        
+    public List<Movie> Movies { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Busca filmes pelo ID do gênero
+        Movies = await MovieService.GetMoviesByGenreAsync(Genre.Id);
+    }
+
+}

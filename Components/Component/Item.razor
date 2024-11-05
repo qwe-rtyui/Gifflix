@@ -1,34 +1,47 @@
 ﻿@using Gifflix.Models
 @inject MovieService MovieService
 
-<div class="items" style="@Style">
-    @if (movies != null && movies.Count > 0)
-    {
-        @foreach (var movie in movies)
+@* <div class="items" style="@Style"> *@
+@if (Movie != null)
+{
+    <div class="item iimg" @onmouseover="() => ShowBackground(Movie.Id, Movie.FullbackdropUrl)" @onmouseout="HideBackground" style="@GetBackgroundStyle(Movie.Id, Movie.FullbackdropUrl)">
+        <img src="@Movie.FullbackdropUrl" alt="@Movie.Title">
+        @if (!EnableDescription)
         {
-            <div class="item iimg" @onmouseover="() => ShowBackground(movie.Id, movie.FullbackdropUrl)" @onmouseout="HideBackground" style="@GetBackgroundStyle(movie.Id, movie.FullbackdropUrl)">
-                <img src="@movie.FullbackdropUrl" alt="@movie.Title">
-                <p>@movie.Title</p>
-                @* <div class="menu">
-                    <div class="items-menu">
-                        <span class="ico play"><ion-icon name="play"></ion-icon></span>
-                        <span class="ico star"><ion-icon name="star"></ion-icon></span>
-                        <span class="ico thumbs-up"><ion-icon name="thumbs-up"></ion-icon></span>
-                        <span class="ico thumbs-down"><ion-icon name="thumbs-down"></ion-icon></span>
-                    </div>
-                </div> *@
-            </div>
-
-
+            <p><ion-icon style="color:darkred" name="film-outline"></ion-icon>&nbsp;| @Movie.Title </p>
         }
+        <div class="menu">
+
+            <div class="items-menu">
+                <div>
+                    <span class="ico play"><ion-icon name="play"></ion-icon></span>
+                    <span class="ico star"><ion-icon name="star"></ion-icon></span>
+                    <span class="ico thumbs-up"><ion-icon name="thumbs-up"></ion-icon></span>
+                    <span class="ico thumbs-down"><ion-icon name="thumbs-down"></ion-icon></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    if (EnableDescription)
+    {
+        <div class="m-4" style="max-width: 75%;">
+            <p><ion-icon style="color:darkred" name="film-outline"></ion-icon>&nbsp;| @Movie.Title </p>
+            <p>@Movie.Overview</p>
+        </div>
     }
-</div>
+
+}
+@* </div> *@
+
 @code {
     [Parameter]
     public string Style { get; set; } = string.Empty;
 
     [Parameter]
-    public Genre Genre { get; set; }
+    public Movie Movie { get; set; }
+
+    [Parameter]
+    public bool EnableDescription { get; set; } = false;
 
     private string CurrentBackgroundUrl { get; set; } = string.Empty;
     private int? HoveredItemId { get; set; } = null;
@@ -38,7 +51,7 @@
     protected override async Task OnInitializedAsync()
     {
         // Busca filmes pelo ID do gênero
-        movies = await MovieService.GetMoviesByGenreAsync(Genre.Id);
+        //movies = await MovieService.GetMoviesByGenreAsync(Genre.Id);
     }
 
     private void ShowBackground(int Id, string MovieURL)
@@ -55,10 +68,14 @@
 
     private string GetBackgroundStyle(int Id, string MovieURL)
     {
-        if (Id == HoveredItemId)
+        if (!EnableDescription)
         {
-            //return $"background-image: url('{CurrentBackgroundUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; flex-grow: 2; z-index: 1;";
-            return $"min-width: 310px; max-width: 200px; transform: scale(1.3); transition: transform 0.5s ease; position: static;  z-index: 1; max-height: 175px;";
+            if (Id == HoveredItemId)
+            {
+                //return $"background-image: url('{CurrentBackgroundUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; flex-grow: 2; z-index: 1;";
+                return $"min-width: 310px; max-width: 200px; transform: scale(1.3); transition: transform 0.5s ease; position: static;  z-index: 1; max-height: 175px;";
+            }
+            return string.Empty;
         }
         return string.Empty;
     }

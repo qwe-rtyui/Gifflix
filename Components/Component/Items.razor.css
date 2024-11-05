@@ -1,0 +1,25 @@
+﻿.items {
+    /*margin-top: 25px;*/
+    display: flex; /* Exibe os itens em linha */
+    gap: 15px; /* Espaço entre os itens */
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; /* Impede quebra de linha */
+    max-width: 100%; /* Limita a largura ao contêiner pai */
+    /*padding-bottom: 10px;*/ /* Espaço para a barra de rolagem */
+    padding-top: 30px;
+}
+
+    /* Estilizando a barra de rolagem (opcional) */
+    .items::-webkit-scrollbar {
+        height: 8px; /* Altura da barra de rolagem */
+    }
+
+    .items::-webkit-scrollbar-thumb {
+        background: #888; /* Cor do "thumb" da barra de rolagem */
+        border-radius: 10px; /* Bordas arredondadas */
+    }
+
+        .items::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Cor do "thumb" ao passar o mouse */
+        }

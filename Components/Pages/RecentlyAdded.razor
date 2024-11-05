@@ -1,19 +1,31 @@
 ﻿@page "/recently"
+@using Gifflix.Models
 @rendermode InteractiveServer
+@inject MovieService MovieService
 
 <PageTitle>Recently Added</PageTitle>
+<div class="px-4">
+    @if (popularMovies is not null)
+    {
+        @foreach (var movie in popularMovies.Results)
+        {
+            <div style="margin-top:16px;background-color:#3f3c3c26;padding:5px;display: flex; align-items: center;border-radius: 25px;padding: 15px;">
+                <Item Movie="movie" Style="@recentlyStyle" EnableDescription="true" />
+            </div>
 
-<div class="recentlyAdded-page">
-    <div class="recently-section">
-        <h2>Recently Added on Gifflix</h2>
-        <Item Style="@recentlyStyle" />
-    </div>
-    <div class="" style="margin-top: 100px">
-    </div>
+        }
+    }
+    else
+    {
+        <p>Loading...</p>
+    }
 </div>
-
-
 @code {
     private string recentlyStyle = $"flex-direction: row; flex-wrap: wrap; justify-content: center;padding-left: 25px;padding-right: 25px;";
+    private MovieResponse popularMovies;
 
+    protected override async Task OnInitializedAsync()
+    {
+        popularMovies = await MovieService.GetPopularMoviesAsync($"movie/popular?language=en-US&page=1");
+    }
 }

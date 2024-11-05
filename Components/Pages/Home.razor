@@ -23,82 +23,21 @@
         <Popular PopularMovies="@popularMovies" MoreDetails="GoToDetailPage" />
     </div>
 
-    <!-- Seção "Item on Gifflix" -->
-    <div class="item-section">
-        <h2>Popular on Gifflix</h2>
-        <div class="items">
-            @for (int i = 0; i < 15; i++)
-            {
-                <div class="item">
-                    <img src="/images/fubuki.png" alt="Lorem Ipsum">
-                    <div class="menu">
-                        <div class="items-menu">
-                            <span class="ico play"><ion-icon name="play"></ion-icon></span>
-                            <span class="ico star"><ion-icon name="star"></ion-icon></span>
-                            <span class="ico thumbs-up"><ion-icon name="thumbs-up"></ion-icon></span>
-                            <span class="ico thumbs-down"><ion-icon name="thumbs-down"></ion-icon></span>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-@*     <div class="item-section">
-        <h2>Popular on Gifflix</h2>
-        <Item />
-    </div> *@
     @if (genres != null && genres.Count > 0)
     {
-        @for (int i = 0; i < Math.Min(genres.Count, 5); i++)
+        @for (int i = 0; i < Math.Min(genres.Count, 20); i++)
         {
             <div class="item-section">
                 <h2>@genres[i].Name</h2>
-                <Item Genre="@genres[i]" />
+                @*<Item Genre="@genres[i]" /> *@
+                <Items Genre="@genres[i]" />
             </div>
         }
     }
     else
     {
         <p>Nenhum gênero disponível.</p>
-    }
-    <div class="item-section">
-        <h2>Popular on Gifflix</h2>
-        <div class="items">
-            @for (int i = 0; i < 15; i++)
-            {
-                <div class="item">
-                    <img src="/images/yu.jpg" alt="Lorem Ipsum">
-                    <div class="menu">
-                        <div class="items-menu">
-                            <span class="ico play"><ion-icon name="play"></ion-icon></span>
-                            <span class="ico star"><ion-icon name="star"></ion-icon></span>
-                            <span class="ico thumbs-up"><ion-icon name="thumbs-up"></ion-icon></span>
-                            <span class="ico thumbs-down"><ion-icon name="thumbs-down"></ion-icon></span>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-    <div class="item-section">
-        <h2>Popular on Gifflix</h2>
-        <div class="items">
-            @for (int i = 0; i < 15; i++)
-            {
-                <div class="item">
-                    <img src="/images/tensei.jpg" alt="Lorem Ipsum">
-                    <div class="menu">
-                        <div class="items-menu">
-                            <span class="ico play"><ion-icon name="play"></ion-icon></span>
-                            <span class="ico star"><ion-icon name="star"></ion-icon></span>
-                            <span class="ico thumbs-up"><ion-icon name="thumbs-up"></ion-icon></span>
-                            <span class="ico thumbs-down"><ion-icon name="thumbs-down"></ion-icon></span>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
+    }    
     <div style="margin-bottom:100px"></div>
 </div>
 
